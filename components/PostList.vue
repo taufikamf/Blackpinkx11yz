@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <Pagination @change="refetch" :totalPages="254" :currentPage="page"/>
+    <Pagination @change="refetch" :totalPages="10" :currentPage="page"/>
 </template>
 <script setup>
     const runtimeConfig = useRuntimeConfig()
