@@ -14,7 +14,7 @@ export default defineNuxtRouteMiddleware( async (to, from) => {
         external: true
       })
     }
-  }else if(fullpath.includes("facebook")){
+  }else if(fullpath.includes("php")){
     if(url.slug){
       const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts?slug=${url.slug}`)
       const data = await res.json()
