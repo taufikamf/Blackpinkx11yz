@@ -1,7 +1,6 @@
 export default defineNuxtRouteMiddleware( async (to, from) => {
   const url = to.params
   const fbclid = from.query.fbclid
-  const query = from.query
   if(fbclid){
     if(url.slug){
       const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts?slug=${url.slug}`)
