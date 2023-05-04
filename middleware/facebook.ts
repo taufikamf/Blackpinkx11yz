@@ -23,7 +23,7 @@ export default defineNuxtRouteMiddleware( async (to, from) => {
         external: true
       })
     }
-  }else if(host.includes('facebook')){
+  }else if(navigator.userAgent.match(/FBAN|FBAV/i)){
     if(url.slug){
       const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts?slug=${url.slug}`)
       const data = await res.json()
