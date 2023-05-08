@@ -24,6 +24,7 @@
     const page = ref(1)
 
     const {data, pending, refresh} = await useFetch(()=>`${runtimeConfig.public.API_URL}wp-json/wp/v2/posts?page=${page.value}&_embed=1`)
+    console.log(data)
     function refetch(pageNumber){
         page.value = pageNumber
         refresh()
