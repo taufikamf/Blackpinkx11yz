@@ -21,16 +21,18 @@ export const usePostStore = defineStore('postStore', {
   },
   actions:{
     async getPost(){
+      const runtimeConfig = useRuntimeConfig()
       this.loading = true
-      const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts`)
+      const res = await fetch(`${runtimeConfig.public.API_URL}wp-json/wp/v2/posts`)
       const data = await res.json()
 
       this.posts = data
       this.loading = false
     },
     async getDetailPost(slug: string){
+      const runtimeConfig = useRuntimeConfig()
       this.loading = true
-      const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts?slug=${slug}`)
+      const res = await fetch(`${runtimeConfig.public.API_URL}wp-json/wp/v2/posts?slug=${slug}`)
       const data = await res.json()
 
       this.details = data
@@ -47,7 +49,8 @@ export const usePostStore = defineStore('postStore', {
       window.location.href = this.url
     },
     async getDetailLink(slug: string){
-      const res = await fetch(`https://thedramaclubs.com/wp-json/wp/v2/posts?slug=${slug}`)
+      const runtimeConfig = useRuntimeConfig()
+      const res = await fetch(`${runtimeConfig.public.API_URL}wp-json/wp/v2/posts?slug=${slug}`)
       const data = await res.json()
 
       
