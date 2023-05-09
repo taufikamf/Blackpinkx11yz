@@ -18,7 +18,7 @@
 </template>
 <script setup>
 definePageMeta({
-  middleware: "posts",
+  middleware: "client",
 });
 import { usePostStore } from '~/stores/PostStore'
 const route = useRoute()

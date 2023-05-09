@@ -10,6 +10,6 @@
 </template>
 <script setup>
 definePageMeta({
-  middleware: "facebook",
+  middleware: "posts",
 });
 </script>

@@ -26,7 +26,8 @@ export default defineNuxtConfig({
   },
   router:{
     middleware: [
-      'facebook'
+      'posts',
+      'client'
     ]
   }
 })
